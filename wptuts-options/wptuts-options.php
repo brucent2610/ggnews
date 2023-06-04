@@ -25,132 +25,132 @@ function ggnews_menu_options() {
     add_theme_page('GGNews Options', 'GGNews Options', 'edit_theme_options', 'ggnews-settings', 'ggnews_admin_options_page');
 }
 // Load the Admin Options page
-add_action('admin_menu', 'ownery_menu_options');
+add_action('admin_menu', 'ggnews_menu_options');
 
-function ownery_admin_options_page() {
+function ggnews_admin_options_page() {
     ?>
     <div class="wrap">
         <div id="icon-themes" class="icon32"><br /></div>
-        <h2><?php _e( 'Ownery Options', 'ownery' ); ?></h2>
+        <h2><?php _e( 'GGNews Options', 'ggnews' ); ?></h2>
         <!-- If we have any error by submiting the form, they will appear here -->
-        <?php settings_errors( 'ownery-settings-errors' ); ?>
+        <?php settings_errors( 'ggnews-settings-errors' ); ?>
         <form id="form-wptuts-options" action="options.php" method="post" enctype="multipart/form-data">
             <?php
-            settings_fields('theme_ownery_options');
-            do_settings_sections('ownery');
+            settings_fields('theme_ggnews_options');
+            do_settings_sections('ggnews');
             ?>
             <p class="submit">
-                <input name="theme_ownery_options[submit]" id="submit_options_form" type="submit" class="button-primary" value="<?php esc_attr_e('Lưu cấu hình', 'ownery'); ?>" />
-                <input name="theme_ownery_options[reset]" type="submit" class="button-secondary" value="<?php esc_attr_e('Cài lại', 'ownery'); ?>" />
+                <input name="theme_ggnews_options[submit]" id="submit_options_form" type="submit" class="button-primary" value="<?php esc_attr_e('Lưu cấu hình', 'ggnews'); ?>" />
+                <input name="theme_ggnews_options[reset]" type="submit" class="button-secondary" value="<?php esc_attr_e('Cài lại', 'ggnews'); ?>" />
             </p>
         </form>
     </div>
     <?php
 }
 
-function ownery_options_settings_init() {
+function ggnews_options_settings_init() {
 
     //Logo
-    register_setting( 'theme_ownery_options', 'theme_ownery_options', 'ownery_options_validate' );
+    register_setting( 'theme_ggnews_options', 'theme_ggnews_options', 'ggnews_options_validate' );
     // Add a form section for the Logo
-    add_settings_section('ownery_settings_header', __( 'Logo Options', 'ownery' ), 'ownery_settings_header_text', 'ownery');
+    add_settings_section('ggnews_settings_header', __( 'Logo Options', 'ggnews' ), 'ggnews_settings_header_text', 'ggnews');
     // Add Logo uploader
-    add_settings_field('ownery_setting_logo',  __( 'Logo', 'ownery' ), 'ownery_setting_logo', 'ownery', 'ownery_settings_header');
-    add_settings_field('ownery_setting_logo_preview',  __( 'Logo Preview', 'ownery' ), 'ownery_setting_logo_preview_func', 'ownery', 'ownery_settings_header');
+    add_settings_field('ggnews_setting_logo',  __( 'Logo', 'ggnews' ), 'ggnews_setting_logo', 'ggnews', 'ggnews_settings_header');
+    add_settings_field('ggnews_setting_logo_preview',  __( 'Logo Preview', 'ggnews' ), 'ggnews_setting_logo_preview_func', 'ggnews', 'ggnews_settings_header');
 
 
     //Favicon
     // Add a form section for the Logo
-    add_settings_section('ownery_favicon_settings_header', __( 'Favicon Options', 'ownery' ), 'ownery_favicon_settings_header_text', 'ownery');
+    add_settings_section('ggnews_favicon_settings_header', __( 'Favicon Options', 'ggnews' ), 'ggnews_favicon_settings_header_text', 'ggnews');
     // Add Logo uploader
-    add_settings_field('ownery_favicon_setting_logo',  __( 'Favicon', 'ownery' ), 'ownery_favicon_setting_logo', 'ownery', 'ownery_favicon_settings_header');
-    add_settings_field('ownery_favicon_setting_logo_preview',  __( 'Favicon Preview', 'ownery' ), 'ownery_favicon_setting_preview_func', 'ownery', 'ownery_favicon_settings_header');
+    add_settings_field('ggnews_favicon_setting_logo',  __( 'Favicon', 'ggnews' ), 'ggnews_favicon_setting_logo', 'ggnews', 'ggnews_favicon_settings_header');
+    add_settings_field('ggnews_favicon_setting_logo_preview',  __( 'Favicon Preview', 'ggnews' ), 'ggnews_favicon_setting_preview_func', 'ggnews', 'ggnews_favicon_settings_header');
 
 }
-add_action( 'admin_init', 'ownery_options_settings_init' );
+add_action( 'admin_init', 'ggnews_options_settings_init' );
 
-function ownery_settings_header_text() {
+function ggnews_settings_header_text() {
     ?>
-    <p><?php _e( 'Manage Logo Options for Ownery Theme.', 'ownery' ); ?></p>
+    <p><?php _e( 'Manage Logo Options for ggnews Theme.', 'ggnews' ); ?></p>
     <?php
 }
 
-function ownery_favicon_settings_header_text() {
+function ggnews_favicon_settings_header_text() {
     ?>
-    <p><?php _e( 'Manage Favicon Options for Ownery Theme.', 'ownery' ); ?></p>
+    <p><?php _e( 'Manage Favicon Options for ggnews Theme.', 'ggnews' ); ?></p>
     <?php
 }
 
-function ownery_setting_logo() {
-    $ownery_options = get_option( 'theme_ownery_options' );
+function ggnews_setting_logo() {
+    $ggnews_options = get_option( 'theme_ggnews_options' );
     ?>
-    <input type="text" id="logo_url" name="theme_ownery_options[logo]" value="<?php echo esc_url( $ownery_options['logo'] ); ?>" />
-    <input id="upload_logo_button" type="button" class="button" value="<?php _e( 'Upload Logo', 'ownery' ); ?>" />
-    <?php if ( '' != $ownery_options['logo'] ): ?>
-        <input id="delete_logo_button" name="theme_ownery_options[delete_logo]" type="submit" class="button" value="<?php _e( 'Delete Logo', 'ownery' ); ?>" />
+    <input type="text" id="logo_url" name="theme_ggnews_options[logo]" value="<?php echo esc_url( $ggnews_options['logo'] ); ?>" />
+    <input id="upload_logo_button" type="button" class="button" value="<?php _e( 'Upload Logo', 'ggnews' ); ?>" />
+    <?php if ( '' != $ggnews_options['logo'] ): ?>
+        <input id="delete_logo_button" name="theme_ggnews_options[delete_logo]" type="submit" class="button" value="<?php _e( 'Delete Logo', 'ggnews' ); ?>" />
     <?php endif; ?>
-    <span class="description"><?php _e('Upload an image for the banner.', 'ownery' ); ?></span>
+    <span class="description"><?php _e('Upload an image for the banner.', 'ggnews' ); ?></span>
     <?php
 }
 
-function ownery_favicon_setting_logo() {
-    $ownery_options = get_option( 'theme_ownery_options' );
+function ggnews_favicon_setting_logo() {
+    $ggnews_options = get_option( 'theme_ggnews_options' );
     ?>
-    <input type="text" id="favicon_url" name="theme_ownery_options[favicon]" value="<?php echo esc_url( $ownery_options['favicon'] ); ?>" />
-    <input id="upload_favicon_button" type="button" class="button" value="<?php _e( 'Upload Favicon', 'ownery' ); ?>" />
-    <?php if ( '' != $ownery_options['favicon'] ): ?>
-        <input id="delete_favicon_button" name="theme_ownery_options[delete_favicon]" type="submit" class="button" value="<?php _e( 'Delete Favicon', 'ownery' ); ?>" />
+    <input type="text" id="favicon_url" name="theme_ggnews_options[favicon]" value="<?php echo esc_url( $ggnews_options['favicon'] ); ?>" />
+    <input id="upload_favicon_button" type="button" class="button" value="<?php _e( 'Upload Favicon', 'ggnews' ); ?>" />
+    <?php if ( '' != $ggnews_options['favicon'] ): ?>
+        <input id="delete_favicon_button" name="theme_ggnews_options[delete_favicon]" type="submit" class="button" value="<?php _e( 'Delete Favicon', 'ggnews' ); ?>" />
     <?php endif; ?>
-    <span class="description"><?php _e('Upload an image for the banner.', 'ownery' ); ?></span>
+    <span class="description"><?php _e('Upload an image for the banner.', 'ggnews' ); ?></span>
     <?php
 }
 
-function ownery_options_validate( $input ) {
-    $default_options = ownery_get_default_options();
+function ggnews_options_validate( $input ) {
+    $default_options = ggnews_get_default_options();
     $valid_input = $default_options;
 
-    $ownery_options = get_option('theme_ownery_options');
+    $ggnews_options = get_option('theme_ggnews_options');
 
     $submit = ! empty($input['submit']) ? true : false;
     $reset = ! empty($input['reset']) ? true : false;
     $delete_logo = ! empty($input['delete_logo']) ? true : false;
 
     if ( $submit ) {
-        if ( $ownery_options['logo'] != $input['logo'] && $ownery_options['logo'] != '' )
-            delete_image( $ownery_options['logo'] );
-        if ( $ownery_options['favicon'] != $input['favicon'] && $ownery_options['favicon'] != '' )
-            delete_image( $ownery_options['favicon'] );
+        if ( $ggnews_options['logo'] != $input['logo'] && $ggnews_options['logo'] != '' )
+            delete_image( $ggnews_options['logo'] );
+        if ( $ggnews_options['favicon'] != $input['favicon'] && $ggnews_options['favicon'] != '' )
+            delete_image( $ggnews_options['favicon'] );
 
         $valid_input['logo'] = $input['logo'];
         $valid_input['favicon'] = $input['favicon'];
     }
     elseif ( $reset ) {
-        delete_image( $ownery_options['logo'] );
-        delete_image( $ownery_options['favicon'] );
+        delete_image( $ggnews_options['logo'] );
+        delete_image( $ggnews_options['favicon'] );
         $valid_input['logo'] = $default_options['logo'];
         $valid_input['favicon'] = $default_options['favicon'];
     }
     elseif ( $delete_logo ) {
-        delete_image( $ownery_options['logo'] );
+        delete_image( $ggnews_options['logo'] );
         $valid_input['logo'] = '';
-        delete_image( $ownery_options['favicon'] );
+        delete_image( $ggnews_options['favicon'] );
         $valid_input['favicon'] = '';
     }
 
     return $valid_input;
 }
 
-function ownery_options_enqueue_scripts() {
-    wp_register_script( 'ownery-upload', get_template_directory_uri() .'/wptuts-options/js/ownery-upload.js', array('jquery','media-upload','thickbox') );
-    if ( 'appearance_page_ownery-settings' == get_current_screen() -> id ) {
+function ggnews_options_enqueue_scripts() {
+    wp_register_script( 'ggnews-upload', get_template_directory_uri() .'/wptuts-options/js/ggnews-upload.js', array('jquery','media-upload','thickbox') );
+    if ( 'appearance_page_ggnews-settings' == get_current_screen() -> id ) {
         wp_enqueue_script('jquery');
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');
         wp_enqueue_script('media-upload');
-        wp_enqueue_script('ownery-upload');
+        wp_enqueue_script('ggnews-upload');
     }
 }
-add_action('admin_enqueue_scripts', 'ownery_options_enqueue_scripts');
+add_action('admin_enqueue_scripts', 'ggnews_options_enqueue_scripts');
 
 function wptuts_options_setup() {
     global $pagenow;
@@ -164,26 +164,26 @@ add_action( 'admin_init', 'wptuts_options_setup' );
 
 function replace_thickbox_text($translated_text, $text, $domain) {
     if ("Insert into Post" == $text) {
-        $referer = strpos( wp_get_referer(), 'ownery-settings' );
+        $referer = strpos( wp_get_referer(), 'ggnews-settings' );
         if ( $referer != '' ) {
-            return __('I want this to be my logo!', 'ownery' );
+            return __('I want this to be my logo!', 'ggnews' );
         }
     }
     return $translated_text;
 }
 
-function ownery_setting_logo_preview_func() {
-    $ownery_options = get_option( 'theme_ownery_options' );  ?>
+function ggnews_setting_logo_preview_func() {
+    $ggnews_options = get_option( 'theme_ggnews_options' );  ?>
     <div id="upload_logo_preview" style="min-height: 100px;">
-        <img style="max-width:100%;" src="<?php echo esc_url( $ownery_options['logo'] ); ?>" />
+        <img style="max-width:100%;" src="<?php echo esc_url( $ggnews_options['logo'] ); ?>" />
     </div>
     <?php
 }
 
-function ownery_favicon_setting_preview_func() {
-    $ownery_options = get_option( 'theme_ownery_options' ); ?>
+function ggnews_favicon_setting_preview_func() {
+    $ggnews_options = get_option( 'theme_ggnews_options' ); ?>
     <div id="upload_favicon_preview" style="min-height: 100px;">
-        <img style="max-width:100%;" src="<?php echo esc_url( $ownery_options['favicon'] ); ?>" />
+        <img style="max-width:100%;" src="<?php echo esc_url( $ggnews_options['favicon'] ); ?>" />
     </div>
     <?php
 }
