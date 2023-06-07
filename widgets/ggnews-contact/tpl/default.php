@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <h3 class="mb-5">
-                    <?php echo __('[:vi]Liên hệ[:vi][:en]Contact Us[:en]') ?>
+                    <?php echo __('Liên hệ') ?>
                 </h3>
                 <div class="row">
                     <?php echo do_shortcode(@$instance['contact']) ?>

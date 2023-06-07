@@ -63,7 +63,7 @@
                         <li class="hidden-xs">
                             <span>
                                 <i class="fa fa-calendar"></i>                                 
-                                <?php echo __('[:vi]Thời gian làm việc: 8:00 - 17:00 (Thứ 2 - Thứ 6)[:vi][:en]Working time: 8:00 - 17:00 (Monday - Friday)[:en]') ?>
+                                <?php echo __('Thời gian làm việc: 8:00 - 17:00 (Thứ 2 - Thứ 6)') ?>
                             </span>
                         </li>
 					    <li class="hidden-xs"><span><i class="fa fa-email"></i>Email: info@eventservices.vn</span></li>
@@ -90,7 +90,7 @@
                          <div class="search-box-style-three search-box-view fix">
                             <form>
                                 <input type="hidden" name="post_type[]" value="product" />
-                                <input type="text" class="email" name="s" placeholder="<?php echo __('[:vi]Tìm sản phẩm bạn mong muốn[:vi][:en]Search products you want[:en]') ?>">
+                                <input type="text" class="email" name="s" placeholder="<?php echo __('Tìm sản phẩm bạn mong muốn') ?>">
                                 <button type="submit" class="submit"></button>
                             </form>
                         </div>
@@ -122,7 +122,7 @@
                         <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $ggnews_options['logo'] ?>" alt=""></a>
                         <div class="vertical-menu mt-10">
                             <span class="categorie-title">
-                                <?php echo __('[:vi]Danh mục[:vi][:en]Categories[:en]') ?>
+                                <?php echo __('Danh mục') ?>
                             </span>
                             <?php if ( is_active_sidebar( 'main_menu' ) ) : ?>
                                     <?php dynamic_sidebar( 'main_menu' ); ?>

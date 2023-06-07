@@ -8,7 +8,7 @@ function ggnews_breadcrumbs($arr) {
             <ul>
                 <li>
                     <a href="<?php echo home_url() ?>">
-                        <?php echo __('[:vi]Trang chủ[:vi][:en]Home[:en]') ?>
+                        <?php echo __('Trang chủ') ?>
                     </a>
                 </li>
                 <?php foreach($arr as $index => $val): ?>

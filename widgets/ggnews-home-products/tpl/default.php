@@ -33,7 +33,7 @@ $query_result = new WP_Query($processed_query);
                                 <div class="group-title universal-margin">
                                     <h2><?php echo @$instance['title'] ?></h2>
                                     <a href="<?php echo $category_link ?>" class="viewmore">
-                                        <?php echo __('[:vi]Xem thêm[:vi][:en]More[:en]') ?>
+                                        <?php echo __('Xem thêm') ?>
                                     </a>
                                 </div>                                
                             </div>
@@ -68,7 +68,7 @@ $query_result = new WP_Query($processed_query);
                                         <!-- <div class="pro-actions">
                                             <div class="actions-primary">
                                                 <a href="/lien-he" data-toggle="tooltip" title="Add to Cart">
-                                                    <?php echo __('[:vi]Liên hệ ngay[:vi][:en]Contact Now[:en]') ?>   
+                                                    <?php echo __('Liên hệ ngay') ?>   
                                                 </a>
                                             </div>
                                         </div> -->

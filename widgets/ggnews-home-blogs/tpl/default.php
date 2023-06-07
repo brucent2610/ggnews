@@ -30,7 +30,7 @@ $query_result = new WP_Query( $processed_query );
                         <h4><a href="<?php echo get_permalink($loop->post->ID) ?>"><strong style="font-weight: 600;"><?php the_title(); ?></strong></a></h4>
                         <p><?php the_excerpt() ?></p>
                         <a class="pop-link" href="<?php echo get_permalink($loop->post->ID) ?>">
-                            <?php echo __('[:vi]Xem thêm[:vi][:en]More[:en]') ?>
+                            <?php echo __('Xem thêm') ?>
                         </a>
                     </div>
                 </div>

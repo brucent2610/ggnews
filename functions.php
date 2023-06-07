@@ -20,8 +20,8 @@ function my_foldabox_dependencies() {
     if(!is_plugin_active('so-widgets-bundle/so-widgets-bundle.php'))
         echo '<div class="error"><p>Warning: Need Install Plugin Siteorigin Widgets</p></div>';
 
-    if(!is_plugin_active('qtranslate-x/qtranslate.php'))
-        echo '<div class="error"><p>Warning: Need Install Plugin Qtranslate X</p></div>';
+        if(!is_plugin_active('woocommerce/woocommerce.php'))
+        echo '<div class="error"><p>Warning: Need Install Plugin Woocommerce</p></div>';
 }
 
 if ( ! function_exists( 'printogram_setup' ) ) :
