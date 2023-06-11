@@ -82,6 +82,7 @@
         </div>
     </div>
 </footer>
+<script src="<?php echo get_template_directory_uri() ?>/media/js/vendor/jquery-1.12.4.min.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

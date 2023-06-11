@@ -127,8 +127,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </span>
                     </div>
                     <p class="product-name">
-                        Mỹ phẩm Hàn Quốc AZ
-                        Solutions Premium
+                        s<?php the_title(); ?>
                     </p>
                     <div class="product-rating">
                         <i class="fa-solid fa-star"></i>
@@ -146,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         903
                     </div>
                     <div class="product-price">
-                        99.00 vnd
+                        <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                     </div>
                     <div class="add-to-cart">
                         <button>
