@@ -83,8 +83,8 @@ $footer_column_1 = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $footer_column_1);
 
@@ -95,8 +95,8 @@ $footer_column_2 = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $footer_column_2);
 
@@ -107,8 +107,8 @@ $footer_column_3 = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $footer_column_3);
 
@@ -119,8 +119,8 @@ $footer_column_4 = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $footer_column_4);
 
@@ -131,10 +131,22 @@ $footer_column_5 = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $footer_column_5);
+
+$footer_column_6 = array(
+    'name'          => __('Footer Column 6'),
+    'id'            => 'footer_column_6',
+    'description'   => '',
+    'class'         => '',
+    'before_widget' => '',
+    'after_widget'  => '',
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
+);
+register_sidebars ( 1, $footer_column_6);
 
 $footer_tags = array(
     'name'          => __('Footer Tags'),
@@ -155,8 +167,8 @@ $main_menu = array(
     'class'         => '',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '<div style="display:none">',
-    'after_title'   => '</div>'
+    // 'before_title'  => '<div style="display:none">',
+    // 'after_title'   => '</div>'
 );
 register_sidebars ( 1, $main_menu);
 
