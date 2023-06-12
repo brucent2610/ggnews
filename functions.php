@@ -257,10 +257,10 @@ function filter_woocommerce_shipping_package_name( $sprintf, $i, $package ) {
 // add the filter
 add_filter( 'woocommerce_shipping_package_name', 'filter_woocommerce_shipping_package_name', 10, 3 );
 
-function kibath_add_to_cart_redirect() {
-    return site_url() . '/dat-hang/';
-}
-add_filter('woocommerce_add_to_cart_redirect', 'kibath_add_to_cart_redirect');
+// function kibath_add_to_cart_redirect() {
+//     return site_url() . '/dat-hang/';
+// }
+// add_filter('woocommerce_add_to_cart_redirect', 'kibath_add_to_cart_redirect');
 
 function kibath_order_button_text() {
     return __( 'Đặt hàng', 'woocommerce' );

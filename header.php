@@ -84,23 +84,22 @@
                     </form>
                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/magnifier(1).png" alt="search" />
                 </div>
-                <img class="cart-icon" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/shopping-cart(2).png" alt="cart" />
+                <a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>">
+                    <img class="cart-icon" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/shopping-cart(2).png" alt="cart" />
+                </a>
             </div>
             <div class="nav-bar">
                 <div class="main-logo">
                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/logo GGnews.png" alt="logo" />
                 </div>
                 <!-- <div class="main-nav"> -->
-                <?php if ( is_active_sidebar( 'main_menu' ) ) : ?>
-                    <?php dynamic_sidebar( 'main_menu' ); ?>
-                <?php endif; ?>
-                <!-- <ul class="main-nav">
+                <ul class="main-nav">
                     <li><a href="">trang chủ</a></li>
                     <li><a href="">giới thiệu</a></li>
                     <li><a href="">sản phẩm</a></li>
                     <li><a href="">tin tức</a></li>
                     <li><a href="">liên hệ</a></li>
-                </ul> -->
+                </ul>
                 <?php if ( is_active_sidebar( 'main_menu_mobile' ) ) : ?>
                     <?php dynamic_sidebar( 'main_menu_mobile' ); ?>
                 <?php endif; ?>

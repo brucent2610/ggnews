@@ -88,9 +88,12 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
                     99.00 vnd
                 </div>
                 <div class="add-to-cart">
-                    <button>
+                    <!-- <button>
                         Thêm vào giở hàng
-                    </button>
+                    </button> -->
+                    <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                        Thêm vào giở hàng
+                    </a>
                 </div>
                 <hr class="product-line" />
             </div>
@@ -134,9 +137,12 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
                         <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                     </div>
                     <div class="add-to-cart">
-                        <button>
+                        <!-- <button>
                             Thêm vào giở hàng
-                        </button>
+                        </button> -->
+                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                            Thêm vào giở hàng
+                        </a>
                     </div>
                 </div>
             </div>

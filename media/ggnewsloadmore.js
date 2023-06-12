@@ -11,7 +11,7 @@ jQuery(function($){
             data : data,
             type : 'POST',
             beforeSend : function ( xhr ) {
-                button.html('<div class="see-more-detail"><p>Đang tải...</p><i class="fa-solid fa-caret-down"></i></div>'); // change the button text, you can also add a preloader image
+                button.html('<div class="see-more-detail"><p>Đang tải...</p></div>'); // change the button text, you can also add a preloader image
             },
             success : function( data ){
                 if( data ) { 

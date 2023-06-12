@@ -22,8 +22,28 @@ class SiteOrigin_Widget_GGNewsFooterDescription_Widget extends SiteOrigin_Widget
                 ],
                 'description' => [
                     'label' => 'Mô tả',
-                    'type' => 'textarea'
+                    'type' => 'text'
                 ],
+                'company' => [
+                    'label' => 'Tên công ty',
+                    'type' => 'text'
+                ],
+                'city' => [
+                    'label' => 'Khu vực',
+                    'type' => 'text'
+                ],
+                'address' => [
+                    'label' => 'Địa chỉ',
+                    'type' => 'text'
+                ],
+                'hotline' => [
+                    'label' => 'Số điện thoại',
+                    'type' => 'text'
+                ],
+                'email' => [
+                    'label' => 'Email',
+                    'type' => 'text'
+                ]
             ),
             plugin_dir_path(__FILE__)
         );

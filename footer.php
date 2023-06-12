@@ -3,8 +3,8 @@
     <div class="wrapper">
         <div class="footer-container">
             <div class="col-1">
-                <h1>thông tin liên hệ</h1>
-                <hr />
+                <!-- <h1>thông tin liên hệ</h1>
+                <hr /> -->
                 <?php if ( is_active_sidebar( 'footer_column_1' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_1' ); ?>
                 <?php endif; ?>
@@ -16,8 +16,8 @@
                 <p>Email: globalhitechmedia.info@gmail.com</p> -->
             </div>
             <div class="col-1">
-                <h1>dịch vụ</h1>
-                <hr />
+                <!-- <h1>dịch vụ</h1>
+                <hr /> -->
                 <?php if ( is_active_sidebar( 'footer_column_2' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_2' ); ?>
                 <?php endif; ?>
@@ -32,8 +32,8 @@
                 </ul> -->
             </div>
             <div class="col-1">
-                <h1>giải pháp công nghệ</h1>
-                <hr />
+                <!-- <h1>giải pháp công nghệ</h1>
+                <hr /> -->
                 <?php if ( is_active_sidebar( 'footer_column_3' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_3' ); ?>
                 <?php endif; ?>
@@ -49,7 +49,7 @@
                 </ul> -->
             </div>
             <div class="col-2">
-                <h1>Ứng dụng di động</h1>
+                <!-- <h1>Ứng dụng di động</h1> -->
                 <?php if ( is_active_sidebar( 'footer_column_4' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_4' ); ?>
                 <?php endif; ?>
@@ -58,7 +58,8 @@
                     <li>Ứng dụng IOS</li>
                     <li>Ứng dụng Android</li>
                 </ul> -->
-                <h1 style="margin-top: 15px">Phần mềm ERP</h1>
+                <!-- <h1 style="margin-top: 15px">Phần mềm ERP</h1> -->
+                <br>
                 <?php if ( is_active_sidebar( 'footer_column_5' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_5' ); ?>
                 <?php endif; ?>
@@ -68,7 +69,8 @@
                     <li>Hướng dẫn đào tạo ERP</li>
                     <li>Giải pháp ERP</li>
                 </ul> -->
-                <h1 style="margin-top: 15px">Dịch vụ SEO</h1>
+                <!-- <h1 style="margin-top: 15px">Dịch vụ SEO</h1> -->
+                <br>
                 <?php if ( is_active_sidebar( 'footer_column_6' ) ) : ?>
                     <?php dynamic_sidebar( 'footer_column_6' ); ?>
                 <?php endif; ?>

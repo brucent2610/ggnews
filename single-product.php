@@ -46,8 +46,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <p class="text-price">99.000 vnd</p>
                     <p class="text-voucher">50.000 vnd + 1000 point</p>
                     <div class="btn-action">
-                        <button class="btn-cart">Thêm vào giỏ hàng</button>
-                        <button class="btn-buy">Đặt hàng ngay</button>
+                        <!-- <button class="btn-cart">Thêm vào giỏ hàng</button> -->
+                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                            Thêm vào giở hàng
+                        </a>
+                        <!-- <button class="btn-buy">Đặt hàng ngay</button> -->
+                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                            Đặt hàng ngay
+                        </a>
                     </div>
 
                     <h5 class="sub-text">Chia sẻ cho bạn bè</h5>
@@ -148,9 +154,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                     </div>
                     <div class="add-to-cart">
-                        <button>
+                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
                             Thêm vào giở hàng
-                        </button>
+                        </a>
                     </div>
 
                     <hr class="product-line" />
@@ -191,9 +197,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                         </div>
                         <div class="add-to-cart">
-                            <button>
+                            <!-- <button>
                                 Thêm vào giở hàng
-                            </button>
+                            </button> -->
+                            <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                                Thêm vào giở hàng
+                            </a>
                         </div>
                     </div>
                 <?php endwhile; ?>
