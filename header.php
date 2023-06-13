@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-	global $woocommerce;
-	$ggnews_options = get_option('theme_ggnews_options');
+    global $woocommerce;
+    $cart = WC()->cart;
+    $ggnews_options = get_option('theme_ggnews_options');
+    $item_count = $cart->get_cart_contents_count();
 ?>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/custom.css">
     <?php wp_head(); ?>
 </head>
-<body class="body-container">
+<body style="background-color: #F7F7F7;">
     <header class="header">
         <!-- banner style  -->
         <div class="banner">
@@ -30,7 +32,7 @@
                 <div class="wrapper">
                     <div class="header-container">
                         <div id="logo_top">
-                            <h1>GG NEWS<h1>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">GG NEWS</a>
                             <a href=""><img class="icons" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/facebook(1).png" alt="fb" /></a>
                             <a href="">
                                 <img class="icons" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/instagram(2).png" alt="ins" />
@@ -41,24 +43,24 @@
                         </div>
                         <div class="header-action">
                             <button style="cursor: pointer">
-                                <div class="btn-action">
+                                <a href="#" class="btn-action">
                                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/edit(1).png" alt="dang ky" />
                                     <p>Đăng Ký</p>
-                                </div>
+                                </a>
 
                             </button>
                             <button style="cursor: pointer">
-                                <div class="btn-action">
+                                <a href="#" class="btn-action">
                                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/enter(3).png" alt="dang nhap" />
                                     <p>Đăng Nhập</p>
-                                </div>
+                                </a>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="header-container-mobile">
                     <div class="logo-mobile">
-                        <h1>GG NEWS<h1>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">GG NEWS</a>
                         <a href=""><img class="icons" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/facebook(1).png" alt="fb" /></a>
                         <a href="">
                             <img class="icons" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/instagram(2).png" alt="ins" />
@@ -68,25 +70,29 @@
                         </a>
                     </div>
                     <div class="action-mobile">
-                        <button><i class="fa-solid fa-pen-to-square"></i> Đăng Ký</button>
-                        <button class="btn-login"><i class="fa-solid fa-right-to-bracket"></i>
-                            <p>Đăng Nhập</p>
+                        <button><a href=""><i class="fa-solid fa-pen-to-square"></i> Đăng Ký</a></button>
+                        <button>
+                            <a href=""><i class=" fa-solid fa-right-to-bracket"></i>Đăng Nhập</a>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="top-banner">
                 <div class="searchbar">
-                    <form>
-                        <input type="hidden" name="post_type[]" value="product" />
-                        <input type="text" class="email" name="s" placeholder="<?php echo __('Tìm kiếm') ?>">
-                        <!-- <button type="submit" class="submit"></button> -->
-                    </form>
+                    <input type="search" placeholder="tìm kiếm">
                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/magnifier(1).png" alt="search" />
                 </div>
-                <a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>">
-                    <img class="cart-icon" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/shopping-cart(2).png" alt="cart" />
-                </a>
+                <div class="cart-container">
+                    <a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>">
+                        <img class="cart-icon" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/shopping-cart(2).png" alt="cart" />
+                        <span>
+                            <?php echo $item_count ?>
+                        </span>
+                    </a>
+                    <span>
+                        <?php echo $item_count ?>
+                    </span>
+                </div>
             </div>
             <div class="nav-bar">
                 <div class="main-logo">
@@ -94,22 +100,19 @@
                 </div>
                 <!-- <div class="main-nav"> -->
                 <ul class="main-nav">
-                    <li><a href="">trang chủ</a></li>
-                    <li><a href="">giới thiệu</a></li>
-                    <li><a href="">sản phẩm</a></li>
-                    <li><a href="">tin tức</a></li>
-                    <li><a href="">liên hệ</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">trang chủ</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">giới thiệu</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">sản phẩm</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">tin tức</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">liên hệ</a></li>
                 </ul>
-                <?php if ( is_active_sidebar( 'main_menu_mobile' ) ) : ?>
-                    <?php dynamic_sidebar( 'main_menu_mobile' ); ?>
-                <?php endif; ?>
-                <!-- <ul class="mobile-nav">
-                    <li><a href=""><i class="fa-solid fa-house"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-circle-info"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-store"></i> </a></li>
-                    <li><a href=""><i class="fa-solid fa-newspaper"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-phone"></i></a></li>
-                </ul> -->
+                <ul class="mobile-nav">
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-circle-info"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-store"></i> </a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-newspaper"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-phone"></i></a></li>
+                </ul>
             </div>
         </div>
     </header>

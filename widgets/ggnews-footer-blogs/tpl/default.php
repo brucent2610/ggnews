@@ -2,7 +2,6 @@
 <hr />
 <ul>
     <?php foreach(@$instance['blog_loop'] as $blog): ?>
-        <!-- <li><a href="<?php echo $blog['href'] ?>"><?php echo $blog['title'] ?></a></li> -->
-        <li><?php echo $blog['title'] ?></li>
+        <li><a href="<?php echo $blog['href'] ?>"><?php echo $blog['title'] ?></a></li>
     <?php endforeach; ?>
 </ul>

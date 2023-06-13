@@ -51,7 +51,7 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
     <div class="product-list-container">
         <div class="header-list">
             <div class="tilte-text">
-                <?php echo single_cat_title("", false) ?>
+                <a href="javascript:void();"><?php echo single_cat_title("", false) ?></a>
             </div>
             <hr class="title-line" />
         </div>
@@ -61,13 +61,17 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
             ?>
             <div class="product-item">
                 <div class="product-img">
-                    <img alt="product item" src="<?php the_post_thumbnail_url(); ?>" />
+                    <a href="<?php echo get_permalink($loop->post->ID) ?>"> 
+                        <img alt="product item" src="<?php the_post_thumbnail_url(); ?>" />
+                    </a>
                     <span class="badge bg-danger" class="badge">
                         <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/insurance.png" alt="" />
                     </span>
                 </div>
                 <p class="product-name">
-                    <?php the_title(); ?>
+                    <a href="<?php echo get_permalink($loop->post->ID) ?>"> 
+                        <?php the_title(); ?>
+                    </a>
                 </p>
                 <div class="product-rating">
                     <i class="fa-solid fa-star"></i>
@@ -85,11 +89,16 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
                     903
                 </div>
                 <div class="product-price">
-                    99.00 vnd
+                    <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                 </div>
                 <div class="add-to-cart">
-                    <button>
+                    <!-- <button>
                         Thêm vào giở hàng
+                    </button> -->
+                    <button>
+                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                            Thêm vào giở hàng
+                        </a>
                     </button>
                 </div>
                 <hr class="product-line" />
@@ -105,13 +114,17 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
             <div class="product-item-mobile">
                 <div class="product-item-mobile-container">
                     <div class="product-img">
-                        <img alt="product item" src="<?php the_post_thumbnail_url(); ?>" />
+                        <a href="<?php echo get_permalink($loop->post->ID) ?>"> 
+                            <img alt="product item" src="<?php the_post_thumbnail_url(); ?>" />
+                        </a>
                         <span class="badge bg-danger" class="badge">
                             <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/insurance.png" alt="" />
                         </span>
                     </div>
                     <p class="product-name">
-                        <?php the_title(); ?>
+                        <a href="<?php echo get_permalink($loop->post->ID) ?>"> 
+                            <?php the_title(); ?>
+                        </a>
                     </p>
                     <div class="product-rating">
                         <i class="fa-solid fa-star"></i>

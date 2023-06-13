@@ -154,9 +154,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                     </div>
                     <div class="add-to-cart">
-                        <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
-                            Thêm vào giở hàng
-                        </a>
+                        <button>
+                            <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                                Thêm vào giở hàng
+                            </a>
+                        </button>
                     </div>
 
                     <hr class="product-line" />
@@ -197,21 +199,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <?php echo number_format((int) $product->get_regular_price()); ?> vnd
                         </div>
                         <div class="add-to-cart">
-                            <!-- <button>
-                                Thêm vào giở hàng
-                            </button> -->
-                            <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
-                                Thêm vào giở hàng
-                            </a>
+                            <button>
+                                <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                                    Thêm vào giở hàng
+                                </a>
+                            </button>
                         </div>
                     </div>
                 <?php endwhile; ?>
-            </div>
-        </div>
-        <div class="see-more">
-            <div class="see-more-detail">
-                <p>Xem thêm</p>
-                <i class="fa-solid fa-caret-down"></i>
             </div>
         </div>
     </div>

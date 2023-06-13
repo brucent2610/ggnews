@@ -24,11 +24,13 @@
         903
     </div>
     <div class="product-price">
-        99.00 vnd
+        <?php echo number_format((int) $product->get_regular_price()); ?> vnd
     </div>
     <div class="add-to-cart">
         <button>
-            Thêm vào giở hàng
+            <a href="<?php echo $product->add_to_cart_url() ?>" data-quantity="1" class="button product_type_product">
+                Thêm vào giở hàng
+            </a>
         </button>
     </div>
     <hr class="product-line" />

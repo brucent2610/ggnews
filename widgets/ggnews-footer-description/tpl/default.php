@@ -4,5 +4,5 @@
 <div class="hightlight-text"><?php echo @$instance['company'] ?></div>
 <p><?php echo @$instance['city'] ?></p>
 <p><?php echo @$instance['address'] ?></p>
-<p><?php echo @$instance['hotline'] ?></p>
-<p><?php echo @$instance['email'] ?></p>
+<p><a href="tel:<?php echo @$instance['hotline'] ?>"><?php echo @$instance['hotline'] ?></a></p>
+<p><a href="mailto:<?php echo @$instance['email'] ?>"><?php echo @$instance['email'] ?></a></p>

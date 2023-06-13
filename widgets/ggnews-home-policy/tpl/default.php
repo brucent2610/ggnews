@@ -1,4 +1,4 @@
-<div class=" wrapper">
+<div class="wrapper-container">
     <div class="category-list">
         <?php foreach(@$instance['policy_loop'] as $policy): ?>
         <div class="category-item">

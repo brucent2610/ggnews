@@ -362,6 +362,10 @@ function ci_get_tag_links( $tag ) {
 	return '/product-tag/' . slugify($tag);
 }
 
+function ci_get_categories_links( $tag ) {
+	return '/danh-muc-san-pham/' . slugify($tag);
+}
+
 function slugify($text)
 { 
     $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
