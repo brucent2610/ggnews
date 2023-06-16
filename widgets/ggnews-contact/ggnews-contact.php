@@ -60,4 +60,4 @@ class SiteOrigin_Widget_GGNewsContact_Widget extends SiteOrigin_Widget {
     }
 }
 
-siteorigin_widget_register( 'o-contact', __FILE__, 'SiteOrigin_Widget_GGNewsContact_Widget' );
+siteorigin_widget_register( 'ggnews-contact', __FILE__, 'SiteOrigin_Widget_GGNewsContact_Widget' );

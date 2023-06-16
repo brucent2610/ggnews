@@ -478,6 +478,16 @@ b, strong {
   color: #e32727;
 }
 
+.checkout:hover {
+  background-color: unset;
+  border-color: transparent;
+  color: black;
+}
+.checkout {
+  background: unset;
+  color: black;
+}
+
 @media (max-width: 767px) {
   .container {
       width: 100%;

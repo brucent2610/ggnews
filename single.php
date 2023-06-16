@@ -50,29 +50,6 @@ foreach ($top_banners as $key => $top_banner) {
                     <div class="content-blog">
                         <?php the_content(); ?>
                     </div>
-                    <!--  Blog-Share Start  -->
-                    <div class="blog-share mtb-50">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-5 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-8 col-md-7 col-sm-6">
-                                <div class="social-links text-right">
-                                    <ul class="social-link-list">
-                                        <li>Share:</li>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-reddit"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Row -->
-                    </div>
-                    <!--  Blog-Share End  -->
                     <!--  Blog-Pager Start  -->
                     <div class="blog-pager">
                         <ul class="pager">

@@ -421,5 +421,67 @@ function gg_news_products_loadmore_ajax_handler(){
 add_action('wp_ajax_loadmore', 'gg_news_products_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'gg_news_products_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
+
+function ggnews_cognito_login() {
+    ob_start();
+    ?>
+        <!-- Add your custom login form HTML here -->
+        <form name="loginform" id="loginform" action="<?php echo wp_login_url(); ?>" method="post">
+            <div class="wrapper" style="display: flex; justify-content: center;">
+                <div class="login-container">
+                    <div class="login-detail">
+                        <div class="login-header">
+                            <h1>Tạo tài khoản mới</h1>
+                            <div class="social-login">
+                                <button class="login-fb"><i class="fa-brands fa-facebook"></i> <span>Continue with facebook</span></button>
+                                <button class="login-google">
+                                    <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/google-icon.png" alt="login with google" />
+                                    <span>Continue with Google</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="line-container">
+                            <div class="line"></div>
+                            <small class="or">Or</small>
+                            <div class="line"></div>
+                        </div>
+                        <div class="login-form">
+                            <div class="login-items">
+                                <p>Họ và tên</p>
+                                <input type="text" placeholder="nguyen van a" />
+                            </div>
+                            <div class="login-items">
+                                <p>Email</p>
+                                <input type="text" placeholder="nguyenvana@gmail.com" />
+                            </div>
+                            <div class="login-items">
+                                <p>Số điện thoại</p>
+                                <input type="text" placeholder="098876543" />
+                            </div>
+                            <button>Đăng nhập</button>
+                        </div>
+                        <div class="login-form-mobile">
+                            <div style="width: 100%">
+                                <div class="login-items">
+                                    <p>Email</p>
+                                    <input type="text" placeholder="nguyenvana@gmail.com" />
+                                </div>
+                                <div class="login-items">
+                                    <p>Số điện thoại</p>
+                                    <input type="text" placeholder="098876543" />
+                                </div>
+                                <button>Đăng nhập</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('ggnews_cognito_login', 'ggnews_cognito_login');
+
+
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );

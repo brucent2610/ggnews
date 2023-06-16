@@ -20,11 +20,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/animate.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/nivo-slider.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/owl.carousel.min.css">
+   	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/slick.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/default.css"> -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/home-3.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/css/responsive.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/media/custom.css">
     <?php wp_head(); ?>
 </head>
-<body style="background-color: #F7F7F7;">
-    <header class="header">
+    <?php if ( is_front_page() ) : ?>
+    <body style="background-color: #F7F7F7;">
+        <header class="header">
+    <?php else : ?>
+    <body class="body-product-page">
+        <header class="header-product-page">
+    <?php endif; ?>
         <!-- banner style  -->
         <div class="banner">
             <!-- top header  -->
@@ -42,15 +61,15 @@
                             </a>
                         </div>
                         <div class="header-action">
-                            <button style="cursor: pointer">
+                            <!-- <button style="cursor: pointer">
                                 <a href="#" class="btn-action">
                                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/edit(1).png" alt="dang ky" />
                                     <p>Đăng Ký</p>
                                 </a>
 
-                            </button>
+                            </button> -->
                             <button style="cursor: pointer">
-                                <a href="#" class="btn-action">
+                                <a href="<?php echo esc_url( home_url( '/login' ) ); ?>" class="btn-action">
                                     <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/enter(3).png" alt="dang nhap" />
                                     <p>Đăng Nhập</p>
                                 </a>
@@ -78,10 +97,11 @@
                 </div>
             </div>
             <div class="top-banner">
-                <div class="searchbar">
-                    <input type="search" placeholder="tìm kiếm">
-                    <img src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/magnifier(1).png" alt="search" />
-                </div>
+                <form class="searchbar" id="ggnews-search-form">
+                    <input type="hidden" name="post_type[]" value="product" />
+                    <input type="search" name="s" placeholder="<?php echo __('Tìm Kiếm') ?>">
+                    <img onclick="document.getElementById('ggnews-search-form').submit();" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/magnifier(1).png" alt="search" />
+                </form>
                 <div class="cart-container">
                     <a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>">
                         <img class="cart-icon" src="<?php echo get_template_directory_uri() ?>/media/ggnews/images/shopping-cart(2).png" alt="cart" />
@@ -101,17 +121,17 @@
                 <!-- <div class="main-nav"> -->
                 <ul class="main-nav">
                     <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">trang chủ</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">giới thiệu</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">sản phẩm</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">tin tức</a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">liên hệ</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/gioi-thieu' ) ); ?>">giới thiệu</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/danh-muc-san-pham/san-pham-noi-bat' ) ); ?>">sản phẩm</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/danh-muc/tin-tuc/' ) ); ?>">tin tức</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/lien-he' ) ); ?>">liên hệ</a></li>
                 </ul>
                 <ul class="mobile-nav">
                     <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-house"></i></a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-circle-info"></i></a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-store"></i> </a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-newspaper"></i></a></li>
-                    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-phone"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/gioi-thieu' ) ); ?>"><i class="fa-solid fa-circle-info"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/danh-muc-san-pham/san-pham-noi-bat' ) ); ?>"><i class="fa-solid fa-store"></i> </a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/danh-muc/tin-tuc/' ) ); ?>"><i class="fa-solid fa-newspaper"></i></a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/lien-he' ) ); ?>"><i class="fa-solid fa-phone"></i></a></li>
                 </ul>
             </div>
         </div>

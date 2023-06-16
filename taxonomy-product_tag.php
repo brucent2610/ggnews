@@ -160,12 +160,20 @@ $term = get_term_by('slug', get_query_var("term"), "product_cat");
                 endwhile;
             ?>
         </div>
-        <div class="see-more gg_news_products_loadmore">
-            <div class="see-more-detail">
-                <p>Xem thêm</p>
-                <i class="fa-solid fa-caret-down"></i>
+        <?php 
+            if($wp_query->max_num_pages > 1):
+        ?>
+        <div class="breadcrubm-page-show border-default universal-padding mt-30 fix">
+            <div class="breadcrumb-list-item f-left">
+                <?php ggnews_product_pagination($wp_query->max_num_pages); ?>
+            </div>
+            <div class="page-list f-right">
+                
             </div>
         </div>
+        <?php 
+            endif;
+        ?>
     </div>
 </div>
 <?php endif; ?>
